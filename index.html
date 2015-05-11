@@ -5,13 +5,14 @@
     <title>Gistter</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/theme/superhero.min.css"/>
+    <!--<link rel="stylesheet" href="css/style.css"/>-->
 </head>
 <body>
     <!-- NAVBAR -->
     <div class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Gistter</a>
+                <a class="navbar-brand" href="index.html">Gistter</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right"><li><a href="signup.html">Sign up</a></li></ul>
@@ -20,26 +21,28 @@
     </div>
     <!-- ===================== -->
     <!-- MAIN PAGE -->
-    <div class="container">
+    <div class="container" ng-app="validation" ng-controller="FormController">
         <!-- FORM -->
         <div class="row">
             <div class="col-lg-6 col-lg-offset-3">
                 <div class="well bs-component">
-                    <form class="form-horizontal">
+                    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate class="form-horizontal">
                         <fieldset>
                             <legend>Sign in</legend>
                             <!-- EMAIL -->
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
                                 <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                                 <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="inputEmail" placeholder="Email" required>
+                                    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="user.email" required>
+                                    <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
                                 </div>
                             </div>
                             <!-- PASSWORD -->
-                            <div class="form-group">
+                            <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
                                 <label for="inputPassword" class="col-lg-2 control-label">Password</label>
                                 <div class="col-lg-10">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
+                                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="user.password" required>
+                                    <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Your password is required.</p>
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" checked> Remember me
@@ -50,7 +53,7 @@
                             <!-- SUBMIT -->
                             <div class="form-group">
                                 <div class="col-lg-10 col-lg-offset-9">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
                                 </div>
                             </div>
                         </fieldset>
@@ -76,5 +79,6 @@
         <!-- ========== -->
     </div>
     <script src="bower_components/angular/angular.min.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>
