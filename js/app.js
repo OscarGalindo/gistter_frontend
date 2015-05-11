@@ -1,6 +1,6 @@
 (function() {
     // create angular module
-    var app = angular.module('validation', []);
+    var app = angular.module('gistter', []);
 
     // create angular controller
     app.controller('FormController', function($scope) {
