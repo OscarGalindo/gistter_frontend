@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+    <div class="panel-heading">Login</div>
+    <div class="panel-body">
+        <form name="userForm" novalidate class="form-horizontal">
+            <!-- EMAIL -->
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+
+                <div class="col-lg-10">
+                    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email"
+                           ng-model="user.email" required>
+                </div>
+            </div>
+            <!-- PASSWORD -->
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+
+                <div class="col-lg-10">
+                    <input type="password" name="password" class="form-control" id="inputPassword"
+                           placeholder="Password"
+                           ng-model="user.password" required>
+
+                    <div class="checkbox pull-left">
+                        <label>
+                            <input type="checkbox" checked> Remember me
+                        </label>
+                    </div>
+
+                    <button type="submit" class="pull-right btn btn-primary boton-submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

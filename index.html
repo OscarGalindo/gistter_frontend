@@ -3,81 +3,51 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Gistter</title>
+    <base href="/"/>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/theme/superhero.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body>
-    <!-- BARRA DE NAVEGACION -->
-    <div class="navbar navbar-default navbar-static-top">
+<body ng-app="gistter">
+    <!-- Barra de navegación -->
+    <header class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="index.html">Gistter</a>
+                <a class="navbar-brand" ui-sref="home">Gistter</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right"><li><a href="signup.html">Sign up</a></li></ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li ng-class="{active: $state.includes('login')}"><a ui-sref="login">Login</a></li>
+                    <li ng-class="{active: $state.includes('signup')}"><a ui-sref="signup">Sign up</a></li>
+                </ul>
             </div>
         </div>
-    </div>
+    </header>
     <!-- ===================== -->
-    <!-- CONTENIDO PAGINA PRINCIPAL -->
-    <div class="container" ng-app="gistter" ng-controller="FormController">
-        <!-- FORMULARIO DE SESION -->
+
+    <!-- Container -->
+    <section class="container">
+        <!-- Contenido de la página -->
         <div class="row">
             <div class="col-lg-6 col-lg-offset-3">
-                <div class="well bs-component">
-                    <form name="userForm" ng-submit="submitForm(userForm.$valid)" novalidate class="form-horizontal">
-                        <fieldset>
-                            <legend>Sign in</legend>
-                            <!-- EMAIL -->
-                            <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
-                                <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                                <div class="col-lg-10">
-                                    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="user.email" required>
-                                    <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
-                                </div>
-                            </div>
-                            <!-- PASSWORD -->
-                            <div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine }">
-                                <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                                <div class="col-lg-10">
-                                    <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="user.password" required>
-                                    <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Your password is required.</p>
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" checked> Remember me
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- SUBMIT -->
-                            <div class="form-group">
-                                <div class="col-lg-10 col-lg-offset-9">
-                                    <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
+                <section ui-view></section>
             </div>
         </div>
         <!-- ========== -->
-        <!-- PIE DE PAGINA -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p class="pull-right">
-                        Made by
-                        <a href="https://github.com/kaseOga" rel="nofollow">Oscar Galindo Villanueva</a>
-                        and
-                        <a href="https://github.com/nvohra" rel="nofollow">Naman Vohra</a>
-                        .
-                    </p>
-                </div>
-            </div>
-        </footer>
-        <!-- ========== -->
-    </div>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="js/app.js"></script>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        Made by
+        <a href="https://github.com/kaseOga" rel="nofollow">Oscar Galindo Villanueva</a>
+        and
+        <a href="https://github.com/nvohra" rel="nofollow">Naman Vohra</a>
+        .
+    </footer>
+    <!-- ========== -->
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="build/gistter.js"></script>
 </body>
 </html>

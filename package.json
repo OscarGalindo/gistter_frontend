@@ -1,0 +1,25 @@
+{
+  "name": "Gistter",
+  "version": "1.0.0",
+  "description": "Gistter Frontend",
+  "main": "gistter/gistter.module.js",
+  "dependencies": {
+    "bower": "^1.4.1",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaseOga/gistter_frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kaseOga/gistter_frontend/issues"
+  },
+  "homepage": "https://github.com/kaseOga/gistter_frontend"
+}
