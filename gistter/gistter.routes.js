@@ -17,21 +17,22 @@
     function config($stateProvider, $urlRouterProvider, $locationProvider) {
         $locationProvider.html5Mode(true);
 
-        $urlRouterProvider
-            .otherwise('/');
+        $urlRouterProvider.otherwise('/');
 
         $stateProvider
             .state('home', {
                 url: '/',
-                template: 'Selecciona una opción.'
+                template: 'Timeline.'
             })
             .state('login', {
                 url: '/login',
-                templateUrl: 'gistter/partials/login.html'
+                templateUrl: 'gistter/partials/login.html',
+                controller: 'authCtrl'
             })
             .state('signup', {
                 url: '/signup',
-                templateUrl: 'gistter/partials/signup.html'
+                templateUrl: 'gistter/partials/signup.html',
+                controller: 'userCtrl'
             })
     }
 
