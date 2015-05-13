@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/theme/superhero.min.css"/>
     <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body ng-app="gistter">
+<body ng-app="gistter" ng-controller="gistterCtrl as gistter">
     <!-- Barra de navegación -->
     <header class="navbar navbar-default navbar-static-top">
         <div class="container">
@@ -16,10 +16,16 @@
                 <a class="navbar-brand" ui-sref="home">Gistter</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right">
+                <div>
+                    Token: {{gistter.token}}
+                </div>
+                <ul class="nav navbar-nav navbar-right" ng-if="!gistter.token">
                     <li ui-sref-active="active"><a ui-sref="login">Login</a></li>
                     <li ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
                 </ul>
+                <div class="nav navbar-nav navbar-right" ng-if="gistter.token">
+                    Username!
+                </div>
             </div>
         </div>
     </header>
@@ -49,6 +55,7 @@
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+<script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
 <script src="build/gistter.js"></script>
 </body>
 </html>
