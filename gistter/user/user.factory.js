@@ -27,9 +27,9 @@
             }
         }
 
-        function setToken(jwt) {
+        function setToken(jwt, remember) {
             angular.extend(user, {token: jwt});
-            localStorageService.set('jwt', jwt);
+            if(remember) localStorageService.set('jwt', jwt);
         }
 
         function isAuth() {

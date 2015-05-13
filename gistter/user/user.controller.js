@@ -19,7 +19,7 @@
             $http.post('http://localhost:5000/auth', data)
                 .then(function(response) {
                     var jwt = response.data.token;
-                    User.setToken(jwt);
+                    User.setToken(jwt, $scope.user.remember);
                     $state.go('home');
                 });
         };
