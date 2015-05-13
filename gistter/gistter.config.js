@@ -31,7 +31,11 @@
             })
             .state('signup', {
                 url: '/signup',
-                templateUrl: 'gistter/layout/partials/signup.html',
+                templateUrl: 'gistter/user/signup.html',
+                controller: 'userCtrl'
+            })
+            .state('logout', {
+                url: '/logout',
                 controller: 'userCtrl'
             })
     }

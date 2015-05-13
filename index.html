@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/theme/superhero.min.css"/>
     <link rel="stylesheet" href="css/style.css"/>
 </head>
-<body ng-app="gistter" ng-controller="gistterCtrl as gistter">
+<body ng-app="gistter" ng-controller="headerCtrl as header">
     <!-- Barra de navegación -->
     <header class="navbar navbar-default navbar-static-top">
         <div class="container">
@@ -16,15 +16,12 @@
                 <a class="navbar-brand" ui-sref="home">Gistter</a>
             </div>
             <div class="navbar-collapse collapse">
-                <div>
-                    Token: {{gistter.token}}
-                </div>
-                <ul class="nav navbar-nav navbar-right" ng-if="!gistter.token">
+                <ul class="nav navbar-nav navbar-right" ng-if="!header.isauth()">
                     <li ui-sref-active="active"><a ui-sref="login">Login</a></li>
                     <li ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
                 </ul>
-                <div class="nav navbar-nav navbar-right" ng-if="gistter.token">
-                    Username!
+                <div class="nav navbar-nav navbar-right" ng-if="header.isauth()">
+                    Wellcome {{header.username()}}! <a ng-click="logout()">Logout</a>
                 </div>
             </div>
         </div>

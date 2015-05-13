@@ -10,6 +10,7 @@
     /* @ngInject */
     function userCtrl($scope, $http, $state, User) {
         $scope.user = {};
+
         $scope.login = function() {
             var data = {
                 "username": $scope.user.username,
@@ -21,6 +22,6 @@
                     User.setToken(jwt);
                     $state.go('home');
                 });
-        }
+        };
     }
 })();
