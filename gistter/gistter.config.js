@@ -21,7 +21,7 @@
         $stateProvider
             .state('home', {
                 url: '/',
-                template: 'Timeline.',
+                templateUrl: 'gisster/timeline/timeline.html',
                 controller: 'timelineCtrl'
             })
             .state('login', {
