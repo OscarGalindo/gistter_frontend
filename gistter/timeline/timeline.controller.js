@@ -9,6 +9,6 @@
 
     /* @ngInject */
     function timeline($scope, User) {
-
+        console.log('hola');
     }
 })();

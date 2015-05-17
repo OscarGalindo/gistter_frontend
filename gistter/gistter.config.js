@@ -19,9 +19,9 @@
 
         $urlRouterProvider.otherwise('/');
         $stateProvider
-            .state('home', {
+            .state('timeline', {
                 url: '/',
-                templateUrl: 'gisster/timeline/timeline.html',
+                templateUrl: 'gistter/timeline/timeline.html',
                 controller: 'timelineCtrl'
             })
             .state('login', {

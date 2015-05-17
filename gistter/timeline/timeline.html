@@ -1,61 +1,19 @@
 <div class="row">
-    <div class="col-lg-7 col-lg-offset-3">
-        <section ui-view>
-            <div class="panel panel-default" style="margin-top: 8em">
-                <div class="panel-body">
-                    <form name="tweet" novalidate class="form-horizontal">
-                        <!-- tweet -->
-                        <div class="form-group">
-                            <label for="textArea" class="col-lg-2 control-label"></label>
-
-                            <div class="col-lg-10">
-                                <textarea class="form-control" rows="1" id="textArea" placeholder="Commit something" required></textarea>
-                            </div>
-                        </div>
-                        <button type="submit" class="pull-left btn btn-primary boton-submit col-lg-offset-2">Add</button>
-                        <button type="submit" class="pull-right btn btn-primary boton-submit" ng-click="tweet()">Tweetear</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </div>
-</div>
-<div class="row">
-    <div class="col-lg-7 col-lg-offset-3">
+    <div class="col-sm-12">
         <div class="panel panel-default">
+            <div class="panel-heading">Tweet something!</div>
             <div class="panel-body">
-                <ol style="list-style: none">
-                    <li>
-                        tweets
-                    </li>
-                    <li>
-                        tweets
-                    </li>
-                    <li>
-                        tweets
-                    </li>
-                    <li>
-                        tweets
-                    </li>
-                    <li>
-                        tweets
-                    </li>
-                    <li>
-                        tweets
-                    </li>
-                    <li>
-                        tweets
-                    </li>
-                    <li>
-                        tweets
-                    </li>
-                    <li>
-                        tweets
-                    </li>
-                    <li>
-                        tweets
-                    </li>
-                </ol>
+                <form name="tweet" novalidate class="form-horizontal">
+                    <!-- tweet -->
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <textarea class="form-control" rows="1" id="textArea" placeholder="Tweet something"
+                                      required></textarea>
+                        </div>
+                    </div>
+                    <button type="submit" class="pull-right btn btn-primary boton-submit" ng-click="tweet()">Tweetear
+                    </button>
+                </form>
             </div>
         </div>
     </div>
