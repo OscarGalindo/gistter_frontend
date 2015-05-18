@@ -4,7 +4,7 @@ html, body {
 footer {
     width: 100%;
     bottom: 0;
-    position: absolute;
+    position: relative;
     text-align: center;
     padding: 10px;
 }
@@ -16,3 +16,13 @@ footer {
 .boton-submit {
     margin-top: 15px;
 }
+.ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ol li div {
+    border-top: 1px solid rgb(43, 62, 80);
+    padding: 5px;
+}
+
