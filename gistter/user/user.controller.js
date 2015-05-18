@@ -11,16 +11,31 @@
     function userCtrl($scope, $http, $state, User) {
         $scope.user = {};
 
-        $scope.login = function() {
+        $scope.login = function () {
             var data = {
                 "username": $scope.user.username,
                 "password": $scope.user.password
             };
-            $http.post('http://localhost:5000/auth', data)
-                .then(function(response) {
+
+            User.login(data)
+                .then(function (response) {
                     var jwt = response.data.token;
                     User.setToken(jwt, $scope.user.remember);
                     $state.go('home');
+                });
+        };
+
+        $scope.signup = function () {
+            var data = {
+                "username": $scope.user.username,
+                "email": $scope.user.email,
+                "password": $scope.user.password,
+                "confirmPassword": $scope.user.confirmPassword
+            };
+
+            User.signup(data).
+                then(function (response) {
+                    console.log(response);
                 });
         };
     }

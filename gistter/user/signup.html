@@ -3,19 +3,6 @@
     <div class="panel-heading">Sign up</div>
     <div class="panel-body">
         <form name="signupForm" ng-submit="submitForm(signupForm.$valid)" novalidate class="form-horizontal">
-            <!-- NAME -->
-            <div class="form-group"
-                 ng-class="{ 'has-error' : signupForm.name.$invalid && !signupForm.name.$pristine }">
-                <label for="inputName" class="col-lg-2 control-label">Name</label>
-
-                <div class="col-lg-10">
-                    <input type="text" name="name" class="form-control" id="inputName" placeholder="Name"
-                           ng-model="user.name" required>
-
-                    <p ng-show="signupForm.name.$invalid && !signupForm.name.$pristine" class="help-block">
-                        Your Name is required.</p>
-                </div>
-            </div>
             <!-- USERNAME -->
             <div class="form-group"
                  ng-class="{ 'has-error' : signupForm.username.$invalid && !signupForm.username.$pristine }">
@@ -24,9 +11,6 @@
                 <div class="col-lg-10">
                     <input type="text" name="username" class="form-control" id="inputUsername"
                            placeholder="Username" ng-model="user.username" required>
-
-                    <p ng-show="signupForm.username.$invalid && !signupForm.username.$pristine"
-                       class="help-block">Enter a valid username.</p>
                 </div>
             </div>
             <!-- EMAIL -->
@@ -37,9 +21,6 @@
                 <div class="col-lg-10">
                     <input type="email" name="email" class="form-control" id="inputEmail"
                            placeholder="Email" ng-model="user.email" required>
-
-                    <p ng-show="signupForm.email.$invalid && !signupForm.email.$pristine"
-                       class="help-block">Enter a valid email.</p>
                 </div>
             </div>
             <!-- PASSWORD -->
@@ -50,9 +31,6 @@
                 <div class="col-lg-10">
                     <input type="password" name="password" class="form-control" id="inputPassword"
                            placeholder="Password" ng-model="user.password" required>
-
-                    <p ng-show="signupForm.password.$invalid && !signupForm.password.$pristine"
-                       class="help-block">Your password is required.</p>
                 </div>
             </div>
             <!-- CONFIRMATION PASSWORD -->
@@ -62,19 +40,10 @@
 
                 <div class="col-lg-10">
                     <input type="password" name="confirmPassword" ng-model="user.confirmPassword"
-                           required compare-to="user.password" class="form-control" id="input"
+                           required class="form-control" id="input"
                            placeholder="Confirm Password">
 
-                    <p ng-show="signupForm.password.$invalid && !signupForm.password.$pristine"
-                       class="help-block">Your doesn't match.</p>
-
-                    <div class="checkbox pull-left">
-                        <label>
-                            <input type="checkbox" checked> Remember me
-                        </label>
-                    </div>
-
-                    <button type="submit" class="pull-right btn btn-primary boton-submit">Submit</button>
+                    <button type="submit" class="pull-right btn btn-primary boton-submit" ng-click="signup()">Submit</button>
                 </div>
             </div>
         </form>
