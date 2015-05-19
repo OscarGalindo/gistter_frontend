@@ -21,7 +21,7 @@
                 .then(function (response) {
                     var jwt = response.data.token;
                     User.setToken(jwt, $scope.user.remember);
-                    $state.go('home');
+                    $state.go('timeline');
                 });
         };
 

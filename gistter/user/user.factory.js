@@ -5,13 +5,13 @@
         .module('gistter')
         .factory('userFactory', userFactory);
 
-    userFactory.$inject = ['localStorageService', 'jwtHelper', '$http'];
+    userFactory.$inject = ['$localStorage', '$sessionStorage', 'jwtHelper', '$http'];
 
     /* @ngInject */
-    function userFactory(localStorageService, jwtHelper, $http) {
+    function userFactory($localStorage, $sessionStorage, jwtHelper, $http) {
         var API = 'http://localhost:5000/';
         var user = {
-            token: localStorageService.get('jwt'),
+            token: $localStorage.jwt,
             getUsername: getUsername,
             setToken: setToken,
             isAuth: isAuth,
@@ -40,7 +40,8 @@
 
         function setToken(jwt, remember) {
             angular.extend(user, {token: jwt});
-            if (remember) localStorageService.set('jwt', jwt);
+            if (remember) $localStorage.jwt = jwt;
+            else $sessionStorage.jwt = jwt;
         }
 
         function isAuth() {
@@ -49,7 +50,8 @@
 
         function logout() {
             user.token = null;
-            localStorageService.remove('jwt');
+            $localStorage.$reset();
+            $sessionStorage.$reset();
         }
     }
 })();

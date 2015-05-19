@@ -5,15 +5,13 @@
         .module('gistter')
         .config(config);
 
-    config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'jwtInterceptorProvider', 'localStorageServiceProvider'];
+    config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'jwtInterceptorProvider'];
 
-    function config($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, jwtInterceptorProvider, localStorageServiceProvider) {
+    function config($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, jwtInterceptorProvider) {
         //jwtInterceptorProvider.tokenGetter = function () {
         //    return localStorage.getItem('token');
         //};
         //$httpProvider.interceptors.push('jwtInterceptor');
-
-        localStorageServiceProvider.setPrefix('gistter');
 
         $locationProvider.html5Mode(true);
 

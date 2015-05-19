@@ -23,6 +23,6 @@
     "bootstrap": "~3.3.4",
     "angular-ui-router": "~0.2.14",
     "angular-jwt": "~0.0.7",
-    "angular-local-storage": "~0.2.0"
+    "ngstorage": "~0.3.4"
   }
 }

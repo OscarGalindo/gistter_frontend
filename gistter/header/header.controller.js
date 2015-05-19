@@ -5,10 +5,10 @@
         .module('gistter')
         .controller('headerCtrl', headerCtrl);
 
-    headerCtrl.$inject = ['$scope', '$state', 'localStorageService', 'userFactory'];
+    headerCtrl.$inject = ['$scope', '$state', 'userFactory'];
 
     /* @ngInject */
-    function headerCtrl($scope, $state, localStorageService, User) {
+    function headerCtrl($scope, $state, User) {
         /* jshint validthis: true */
         var vm = this;
 

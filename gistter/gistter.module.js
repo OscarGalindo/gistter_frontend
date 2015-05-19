@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('gistter', ['ui.router', 'angular-jwt', 'LocalStorageModule']);
+        .module('gistter', ['ui.router', 'angular-jwt', 'ngStorage']);
 })();
