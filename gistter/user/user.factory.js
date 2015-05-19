@@ -10,8 +10,11 @@
     /* @ngInject */
     function userFactory($localStorage, $sessionStorage, jwtHelper, $http) {
         var API = 'http://localhost:5000/';
+
+        var $local = $localStorage;
+        var $session = $sessionStorage;
         var user = {
-            token: $localStorage.jwt,
+            token: $local.jwt || $session.jwt,
             getUsername: getUsername,
             setToken: setToken,
             isAuth: isAuth,
@@ -40,8 +43,8 @@
 
         function setToken(jwt, remember) {
             angular.extend(user, {token: jwt});
-            if (remember) $localStorage.jwt = jwt;
-            else $sessionStorage.jwt = jwt;
+            if (remember) $local.jwt = jwt;
+            else $session.jwt = jwt;
         }
 
         function isAuth() {
@@ -50,8 +53,8 @@
 
         function logout() {
             user.token = null;
-            $localStorage.$reset();
-            $sessionStorage.$reset();
+            $local.$reset();
+            $session.$reset();
         }
     }
 })();
