@@ -36,6 +36,7 @@
             User.signup(data).
                 then(function (response) {
                     console.log(response);
+                    $state.go('login');
                 });
         };
     }
