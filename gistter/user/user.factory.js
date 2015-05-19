@@ -5,11 +5,16 @@
         .module('gistter')
         .factory('userFactory', userFactory);
 
-    userFactory.$inject = ['$localStorage', '$sessionStorage', 'jwtHelper', '$http'];
+    userFactory.$inject = ['$localStorage', '$sessionStorage', 'jwtHelper', '$http', '$rootScope'];
 
     /* @ngInject */
-    function userFactory($localStorage, $sessionStorage, jwtHelper, $http) {
+    function userFactory($localStorage, $sessionStorage, jwtHelper, $http, $rootScope) {
         var API = 'http://localhost:5000/';
+        var queue = [];
+        var currentMessage = "";
+        $rootScope.$on("$routeChangeSuccess", function() {
+            currentMessage = queue.shift() || "";
+        });
 
         var $local = $localStorage;
         var $session = $sessionStorage;
@@ -20,7 +25,9 @@
             isAuth: isAuth,
             logout: logout,
             login: login,
-            signup: signup
+            signup: signup,
+            setMessage: setMessage,
+            getMessage: getMessage
         };
 
         return user;
@@ -55,6 +62,14 @@
             user.token = null;
             $local.$reset();
             $session.$reset();
+        }
+
+        function setMessage(message) {
+            queue.push(message);
+        }
+
+        function getMessage() {
+            return currentMessage;
         }
     }
 })();

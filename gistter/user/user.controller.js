@@ -33,9 +33,10 @@
                 "confirmPassword": $scope.user.confirmPassword
             };
 
-            User.signup(data).
-                then(function (response) {
-                    console.log(response);
+            User.signup(data)
+                .then(function (response) {
+                    var message = "Your registration was successful!!!";
+                    User.setMessage(message);
                     $state.go('login');
                 });
         };
