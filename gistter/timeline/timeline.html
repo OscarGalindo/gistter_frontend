@@ -11,14 +11,14 @@
                                       required></textarea>
                         </div>
                     </div>
-                    <button type="submit" class="pull-right btn btn-primary boton-submit" ng-click="tweet()">Tweetear
+                    <button class="btn btn-info">
+                        <fa name="github" size="1"></fa> Add gist
+                    </button>
+                    <button type="submit" class="pull-right btn btn-success" ng-click="tweet()">Tweetear
                     </button>
                 </form>
             </div>
         </div>
-
-        <div class="timeline">
-            <tweet ng-repeat="a in [1,2,3,4,5]"></tweet>
-        </div>
     </div>
 </div>
+<tweet ng-repeat="i in [1,2,3,4]"></tweet>
