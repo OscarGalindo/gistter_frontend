@@ -10,6 +10,7 @@
     /* @ngInject */
     function userCtrl($scope, $http, $state, User) {
         $scope.user = {};
+        $scope.flash_message = User.getMessage();
 
         $scope.login = function () {
             var data = {

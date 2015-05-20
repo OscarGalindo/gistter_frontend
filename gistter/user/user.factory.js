@@ -12,7 +12,9 @@
         var API = 'http://localhost:5000/';
         var queue = [];
         var currentMessage = "";
-        $rootScope.$on("$routeChangeSuccess", function() {
+        $rootScope.$on("$stateChangeSuccess", function() {
+            console.log('hola');
+            console.log(queue);
             currentMessage = queue.shift() || "";
         });
 
