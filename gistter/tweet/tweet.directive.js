@@ -4,7 +4,7 @@
         .directive('tweet', function() {
            return {
                restrict: 'E',
-               templateUrl: 'tweet.html'
+               templateUrl: '/gistter/tweet/tweet.html'
            }
         });
 })();
