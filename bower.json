@@ -23,6 +23,7 @@
     "bootstrap": "~3.3.4",
     "angular-ui-router": "~0.2.14",
     "angular-jwt": "~0.0.7",
-    "ngstorage": "~0.3.4"
+    "ngstorage": "~0.3.4",
+    "angular-fontawesome": "~0.3.2"
   }
 }

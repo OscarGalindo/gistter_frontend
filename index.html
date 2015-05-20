@@ -5,16 +5,18 @@
     <title>Gistter</title>
     <base href="/"/>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/theme/superhero.min.css"/>
     <link rel="stylesheet" href="css/theme/highlight.css"/>
     <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/timeline.css"/>
 </head>
 <body ng-app="gistter" ng-controller="headerCtrl as header">
     <!-- Barra de navegación -->
     <header class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" ui-sref="home">Gistter</a>
+                <a class="navbar-brand" ui-sref="timeline">Gistter</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right" ng-if="!header.isauth()">
@@ -53,6 +55,7 @@
 <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
 <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+<script src="bower_components/angular-fontawesome/dist/angular-fontawesome.min.js"></script>
 <script src="build/gistter.js"></script>
 </body>
 </html>

@@ -1,0 +1,17 @@
+img.profile {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.circle-icon {
+    margin-left: 5px;
+    background: #B8BDCA;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 7px;
+    line-height: 18px;
+    color: #FFF;
+}
