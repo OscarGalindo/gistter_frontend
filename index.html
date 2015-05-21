@@ -23,8 +23,11 @@
                     <li ui-sref-active="active"><a ui-sref="login">Login</a></li>
                     <li ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
                 </ul>
-                <div class="nav navbar-nav navbar-right" ng-if="header.isauth()">
-                    Wellcome {{header.username()}}! <a ng-click="logout()">Logout</a>
+                <div class="nav navbar-nav navbar-right userLogin" ng-if="header.isauth()">
+                    Wellcome {{header.username()}}!
+                    <button class="btn btn-link" ng-click="logout()">
+                        <span class="text-danger">Logout</span>
+                    </button>
                 </div>
             </div>
         </div>

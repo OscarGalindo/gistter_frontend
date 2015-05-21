@@ -20,17 +20,17 @@
                     <input type="password" name="password" class="form-control" id="inputPassword"
                            placeholder="Password"
                            ng-model="user.password" required>
-
-                    <div class="checkbox pull-left">
-                        <label>
-                            <input type="checkbox" ng-model="user.remember" checked> Remember me
-                        </label>
-                    </div>
-
-                    <button type="submit" class="pull-right btn btn-primary boton-submit" ng-click="login()">Login
-                    </button>
                 </div>
             </div>
+
+            <div class="checkbox pull-left">
+                <label>
+                    <input type="checkbox" ng-model="user.remember" checked> Remember me
+                </label>
+            </div>
+
+            <button type="submit" class="pull-right btn btn-primary boton-submit" ng-click="login()">Login
+            </button>
         </form>
     </div>
 </div>
