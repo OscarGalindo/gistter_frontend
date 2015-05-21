@@ -5,11 +5,12 @@
         .module('gistter')
         .controller('userCtrl', userCtrl);
 
-    userCtrl.$inject = ['$scope', '$http', '$state', 'userFactory'];
+    userCtrl.$inject = ['$scope', '$http', '$state', 'userFactory', 'flashmessageFactory'];
 
     /* @ngInject */
-    function userCtrl($scope, $http, $state, User) {
+    function userCtrl($scope, $http, $state, User, Flashmessage) {
         $scope.user = {};
+        $scope.flash_message = Flashmessage.getMessage();
 
         $scope.login = function () {
             var data = {
@@ -36,7 +37,7 @@
             User.signup(data)
                 .then(function (response) {
                     var message = "Your registration was successful!!!";
-                    User.setMessage(message);
+                    Flashmessage.setMessage(message);
                     $state.go('login');
                 });
         };
