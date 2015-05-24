@@ -43,6 +43,12 @@
                     var message = "Your registration was successful!";
                     Flashmessage.setMessage(message, 'success');
                     $state.go('login');
+                })
+                .error(function(resp) {
+                    for(var id in resp.errors) {
+                        Flashmessage.setMessage(resp.errors[id], 'danger');
+                    }
+                    $state.reload();
                 });
         };
     }

@@ -11,7 +11,8 @@
         var queue = [];
         var currentMessage = "";
         $rootScope.$on("$stateChangeSuccess", function () {
-            currentMessage = queue.shift() || "";
+            currentMessage = queue || "";
+            queue = []
         });
 
         var flashmessage = {
