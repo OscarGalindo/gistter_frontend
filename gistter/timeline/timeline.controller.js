@@ -5,10 +5,14 @@
         .module('gistter')
         .controller('timelineCtrl', timeline);
 
-    timeline.$inject = ['$scope', 'userFactory'];
+    timeline.$inject = ['$state', 'userFactory', 'flashmessageFactory'];
 
     /* @ngInject */
-    function timeline($scope, User) {
-        console.log('hola');
+    function timeline($state, User, FM) {
+        if(!User.isAuth()) {
+            FM.setMessage('Debes loguearte para ver la página', 'warning');
+            $state.go('login'); // Enviar a una página de inicio con login/signup
+        }
     }
+
 })();
