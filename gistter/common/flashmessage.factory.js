@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -10,9 +10,7 @@
     function flashmessageFactory($rootScope) {
         var queue = [];
         var currentMessage = "";
-        $rootScope.$on("$stateChangeSuccess", function() {
-            console.log('hola');
-            console.log(queue);
+        $rootScope.$on("$stateChangeSuccess", function () {
             currentMessage = queue.shift() || "";
         });
 
