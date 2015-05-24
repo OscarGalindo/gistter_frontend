@@ -19,17 +19,12 @@
             isAuth: isAuth,
             logout: logout,
             login: login,
-            signup: signup,
-            profile: profile
+            signup: signup
         };
 
         return user;
 
         ////////////////
-
-        function profile(username) {
-            return $http.get(API.url + 'user/' + username);
-        }
 
         function login(data) {
             return $http.post(API.url + 'auth', data);

@@ -10,7 +10,7 @@
     /* @ngInject */
     function profile(API, $http) {
         var profile = {
-            get: get()
+            get: get
         };
 
         return profile;

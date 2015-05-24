@@ -39,14 +39,14 @@
                 url: '/logout',
                 controller: 'userCtrl'
             })
-            .state('user', {
+            .state('profile', {
                 url: '/:username',
                 templateUrl: 'gistter/user/user.html',
                 controller: 'profileCtrl',
-                resolve:{
-                    user: ['$stateParams', 'userFactory', function($stateParams, UserFactory){
-                        return UserFactory.profile($stateParams.username);
-                    }]
+                resolve: {
+                    userProfile: function ($stateParams, profileFactory) {
+                        return profileFactory.get($stateParams.username);
+                    }
                 }
             })
     }

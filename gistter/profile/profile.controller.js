@@ -5,14 +5,10 @@
         .module('gistter')
         .controller('profileCtrl', profile);
 
-    profile.$inject = ['user'];
+    profile.$inject = ['userProfile'];
 
     /* @ngInject */
-    function profile(user)
-    {
-        console.log('entro');
-        /* jshint validthis: true */
-        var vm = this;
-
+    function profile(userProfile) {
+        console.log(userProfile);
     }
 })();
