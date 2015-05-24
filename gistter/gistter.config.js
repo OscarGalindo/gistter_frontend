@@ -3,15 +3,18 @@
 
     angular
         .module('gistter')
+        .constant('API', {
+            url: 'http://localhost:5000/'
+        })
         .config(config);
 
-    config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'jwtInterceptorProvider'];
+    config.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', 'jwtInterceptorProvider', 'userFactoryProvider'];
 
-    function config($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, jwtInterceptorProvider) {
-        //jwtInterceptorProvider.tokenGetter = function () {
-        //    return localStorage.getItem('token');
-        //};
-        //$httpProvider.interceptors.push('jwtInterceptor');
+    function config($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, jwtInterceptorProvider, User) {
+        jwtInterceptorProvider.tokenGetter = function () {
+            return User.$get().getToken();
+        };
+        $httpProvider.interceptors.push('jwtInterceptor');
 
         $locationProvider.html5Mode(true);
 
