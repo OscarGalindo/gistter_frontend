@@ -19,7 +19,7 @@
 
             User.login(data)
                 .success(function (response) {
-                    var jwt = response.data.token;
+                    var jwt = response.token;
                     User.setToken(jwt, $scope.user.remember);
                     $state.go('timeline');
                 })
