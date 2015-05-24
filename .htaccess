@@ -1,4 +1,3 @@
-RewriteBase /
 RewriteEngine on
 
 RewriteCond %{REQUEST_FILENAME} -f [OR]

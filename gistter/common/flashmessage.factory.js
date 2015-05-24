@@ -23,8 +23,8 @@
 
         //////
 
-        function setMessage(message) {
-            queue.push(message);
+        function setMessage(message, type) {
+            queue.push({'text': message, 'type': type});
         }
 
         function getMessage() {

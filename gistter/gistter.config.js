@@ -22,16 +22,6 @@
                 templateUrl: 'gistter/timeline/timeline.html',
                 controller: 'timelineCtrl'
             })
-            .state('user', {
-                url: '/:username',
-                templateUrl: 'gistter/user/user.html',
-                controller: 'profileCtrl',
-                resolve:{
-                    user: ['$stateParams', 'userFactory', function($stateParams, UserFactory){
-                        return UserFactory.profile($stateParams.username);
-                    }]
-                }
-            })
             .state('login', {
                 url: '/login',
                 templateUrl: 'gistter/user/login.html',
@@ -45,6 +35,16 @@
             .state('logout', {
                 url: '/logout',
                 controller: 'userCtrl'
+            })
+            .state('user', {
+                url: '/:username',
+                templateUrl: 'gistter/user/user.html',
+                controller: 'profileCtrl',
+                resolve:{
+                    user: ['$stateParams', 'userFactory', function($stateParams, UserFactory){
+                        return UserFactory.profile($stateParams.username);
+                    }]
+                }
             })
     }
 

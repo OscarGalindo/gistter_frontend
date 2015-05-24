@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Gistter</title>
-    <base href="/"/>
+    <base href="/" />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/theme/superhero.min.css"/>
@@ -39,6 +39,11 @@
     <section class="container">
         <!-- Contenido de la página -->
         <div class="row gistter_content">
+            <div class="col-lg-12" ng-controller="flashmessageCtrl">
+                <div ng-if="fmsg()" ng-init="m = fmsg()" class="alert alert-dismissible" ng-class="'alert-' + m.type">
+                    <strong>{{m.text}}</strong>
+                </div>
+            </div>
             <div class="col-lg-8 col-lg-offset-2">
                 <section ui-view></section>
             </div>
