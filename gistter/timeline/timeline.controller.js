@@ -13,6 +13,7 @@
             FM.setMessage('Debes loguearte para ver la página', 'warning');
             $state.go('login'); // Enviar a una página de inicio con login/signup
         }
+
         $scope.tweet = {};
         $scope.postTweet = function() {
             var tweet = {

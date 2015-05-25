@@ -5,10 +5,11 @@
         .module('gistter')
         .controller('profileCtrl', profile);
 
-    profile.$inject = ['userProfile'];
+    profile.$inject = ['$scope', 'userProfile'];
 
     /* @ngInject */
-    function profile(userProfile) {
-        console.log(userProfile);
+    function profile($scope, userProfile) {
+        $scope.profile = userProfile.data.profile;
+        $scope.tweets = userProfile.data.tweets;
     }
 })();

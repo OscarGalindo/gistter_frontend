@@ -3,14 +3,24 @@
     <div class="panel-heading">Sign up</div>
     <div class="panel-body">
         <form name="signupForm" ng-submit="submitForm(signupForm.$valid)" novalidate class="form-horizontal">
-            <!-- USERNAME -->
+            <!-- NAME -->
             <div class="form-group"
                  ng-class="{ 'has-error' : signupForm.username.$invalid && !signupForm.username.$pristine }">
-                <label for="inputUsername" class="col-lg-2 control-label">Username</label>
+                <label for="inputName" class="col-lg-2 control-label">Name</label>
 
                 <div class="col-lg-10">
-                    <input type="text" name="username" class="form-control" id="inputUsername"
-                           placeholder="Username" ng-model="user.username" required>
+                    <input type="text" name="name" class="form-control" id="inputName"
+                           placeholder="Name" ng-model="user.name" required>
+                </div>
+            </div>
+            <!-- LASTNAME -->
+            <div class="form-group"
+                 ng-class="{ 'has-error' : signupForm.username.$invalid && !signupForm.username.$pristine }">
+                <label for="inputLastname" class="col-lg-2 control-label">Lastname</label>
+
+                <div class="col-lg-10">
+                    <input type="text" name="lastname" class="form-control" id="inputLastname"
+                           placeholder="Lastname" ng-model="user.lastname" required>
                 </div>
             </div>
             <!-- EMAIL -->
@@ -21,6 +31,17 @@
                 <div class="col-lg-10">
                     <input type="email" name="email" class="form-control" id="inputEmail"
                            placeholder="Email" ng-model="user.email" required>
+                </div>
+            </div>
+            <hr/>
+            <!-- USERNAME -->
+            <div class="form-group"
+                 ng-class="{ 'has-error' : signupForm.username.$invalid && !signupForm.username.$pristine }">
+                <label for="inputUsername" class="col-lg-2 control-label">Username</label>
+
+                <div class="col-lg-10">
+                    <input type="text" name="username" class="form-control" id="inputUsername"
+                           placeholder="Username" ng-model="user.username" required>
                 </div>
             </div>
             <!-- PASSWORD -->
