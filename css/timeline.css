@@ -4,18 +4,13 @@ img.profile {
     margin-right: 10px;
 }
 
-.circle-icon {
-    margin-left: 5px;
-    background: rgba(255, 255, 255, 0.50);
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    text-align: center;
-    padding: 7px;
-    line-height: 18px;
-    color: #485563;
+i {
     cursor: pointer;
+    color: #9DA9B5;
+    margin: 5px 10px;
+    font-size: 17px !important;
 }
-.circle-icon:hover {
-    background: rgba(255, 255, 255, 1);
+
+i:hover {
+    color: #fff !important;
 }

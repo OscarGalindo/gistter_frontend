@@ -1,42 +1,31 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <img src="http://i.imgur.com/SgjlF2v.png" class="profile"/>
-        <span class="nickname"><strong>Oscar Galindo</strong></span>
-        <small class="text-muted-header"><a ui-sref="profile({username: 'kaseOga'})">@kaseOga</a> - 15/10/1987 13:45h
+        <span class="nickname"><strong>{{tweetData.user.fullname}}</strong></span>
+        <small class="text-muted-header"><a ui-sref="profile({username: 'kaseOga'})">
+            @{{tweetData.user.username}}</a> - {{tweetData.created_at}}
         </small>
     </div>
     <div class="panel-body">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deleniti dicta doloremque dolorum earum
-            est fugiat iste maiores, nobis qui quis sapiente ut, voluptates. Doloribus error ex officia omnis soluta.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur nobis non quam rerum sunt. Adipisci
-            amet,
-            corporis ex ipsa laudantium libero neque quidem recusandae repellendus similique suscipit velit vero
-            voluptates.
-            <br/><br/>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet doloremque enim nostrum nulla recusandae.
-            Autem
-            consequuntur eius enim error, eveniet excepturi hic ipsam laudantium, modi officia perferendis quaerat quo,
-            repudiandae.</p>
+        <p>{{tweetData.body}}</p>
 
-        <div class="panel panel-default" style="margin-top: 20px;">
+        <div class="panel panel-default" style="margin-top: 20px;" ng-if="tweetData.code_html">
             <div class="panel-heading">
                 <strong>Gist</strong>
             </div>
-            <div class="panel-body" style="padding: 0;">
-                <div class="highlight"><pre><span class="o">&lt;</span><span class="err">?</span><span
-                        class="n">php</span> <span
-                        class="n">echo</span> <span class="s">&#39;hola&#39;</span><span class="p">;</span> <span
-                        class="err">?</span><span class="o">&gt;</span></pre>
-                </div>
-            </div>
+            <div class="panel-body" style="padding: 0;" ng-bind-html="tweetData.code_html"></div>
         </div>
     </div>
     <div class="panel-footer clearfix">
+        <div class="pull-left">
+            <fa name="reply" style="color: rgba(255, 255, 255, 0.50);"></fa>
+            <fa name="retweet" style="color: rgba(255, 255, 255, 0.50);"></fa>
+            <fa name="ellipsis-h" style="color: rgba(255, 255, 255, 0.50);"></fa>
+        </div>
         <div class="pull-right">
-            <span>Share</span>
-            <fa class="circle-icon" name="google" inverse></fa>
-            <fa class="circle-icon" name="facebook"></fa>
-            <fa class="circle-icon" name="twitter"></fa>
+            <fa name="google"></fa>
+            <fa name="facebook"></fa>
+            <fa name="twitter"></fa>
         </div>
     </div>
 </div>
