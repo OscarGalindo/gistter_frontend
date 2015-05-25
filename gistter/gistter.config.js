@@ -41,7 +41,7 @@
             })
             .state('profile', {
                 url: '/:username',
-                templateUrl: 'gistter/user/user.html',
+                templateUrl: 'gistter/profile/user.html',
                 controller: 'profileCtrl',
                 resolve: {
                     userProfile: function ($stateParams, profileFactory) {

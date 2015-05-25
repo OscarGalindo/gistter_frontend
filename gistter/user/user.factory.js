@@ -41,7 +41,7 @@
         }
 
         function setToken(jwt, remember) {
-            angular.extend(user, {token: jwt});
+            user.token = jwt;
             if (remember) $local.jwt = jwt;
             else $session.jwt = jwt;
         }
