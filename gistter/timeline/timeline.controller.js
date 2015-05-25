@@ -15,6 +15,7 @@
         }
 
         $scope.tweet = {};
+        $scope.tweets = [];
         $scope.postTweet = function() {
             var tweet = {
                 body: $scope.tweet.body,

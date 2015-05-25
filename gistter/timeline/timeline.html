@@ -28,4 +28,10 @@
         </div>
     </div>
 </div>
-<tweet ng-repeat="i in [1,2,3,4]"></tweet>
+<tweet ng-repeat="tweet in tweets" tweet-data="tweet"></tweet>
+<div ng-if="tweets.length == 0">
+    <div class="jumbotron">
+        <h1>Empty timeline</h1>
+        <p>Follow someone to see your timeline</p>
+    </div>
+</div>
