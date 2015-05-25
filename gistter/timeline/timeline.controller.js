@@ -5,14 +5,16 @@
         .module('gistter')
         .controller('timelineCtrl', timeline);
 
-    timeline.$inject = ['$scope', '$state', 'tweetFactory', 'userFactory', 'flashmessageFactory'];
+    timeline.$inject = ['$scope', '$state', 'tweetFactory', 'userFactory', 'flashmessageFactory', 'timelineData'];
 
     /* @ngInject */
-    function timeline($scope, $state, Tweet, User, FM) {
+    function timeline($scope, $state, Tweet, User, FM, timelineData) {
         if(!User.isAuth()) {
             FM.setMessage('Debes loguearte para ver la página', 'warning');
             $state.go('login'); // Enviar a una página de inicio con login/signup
         }
+
+        console.log(timelineData);
 
         $scope.tweet = {};
         $scope.tweets = [];

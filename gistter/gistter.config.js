@@ -20,11 +20,6 @@
 
         $urlRouterProvider.otherwise('/');
         $stateProvider
-            .state('timeline', {
-                url: '/',
-                templateUrl: 'gistter/timeline/timeline.html',
-                controller: 'timelineCtrl'
-            })
             .state('login', {
                 url: '/login',
                 templateUrl: 'gistter/user/login.html',
@@ -38,6 +33,16 @@
             .state('logout', {
                 url: '/logout',
                 controller: 'userCtrl'
+            })
+            .state('timeline', {
+                url: '/',
+                templateUrl: 'gistter/timeline/timeline.html',
+                controller: 'timelineCtrl',
+                resolve: {
+                    timelineData: function (timelineFactory) {
+                        return timelineFactory.getTL();
+                    }
+                }
             })
             .state('profile', {
                 url: '/:username',
