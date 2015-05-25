@@ -8,20 +8,20 @@
                     <div class="form-group">
                         <div class="col-sm-12">
                             <textarea class="form-control" rows="2" id="textArea" placeholder="Tweet something"
-                                      required></textarea>
+                                      ng-model="tweet.body" required></textarea>
                         </div>
                     </div>
                     <!-- gist -->
                     <div class="form-group" ng-if="addgist">
                         <div class="col-sm-12">
                             <textarea class="form-control" rows="5" id="gist" placeholder="Add your code inside"
-                                      required></textarea>
+                                      ng-model="tweet.gist" required></textarea>
                         </div>
                     </div>
                     <button class="btn btn-info" ng-click="addgist = !addgist" ng-class="addgist ? 'btn-danger' : 'btn-info'">
                         <fa name="github" size="1"></fa> {{addgist? 'Remove' : 'Add'}} gist
                     </button>
-                    <button type="submit" class="pull-right btn btn-success" ng-click="tweet()">Tweetear
+                    <button type="submit" class="pull-right btn btn-success" ng-click="postTweet()">Tweetear
                     </button>
                 </form>
             </div>
