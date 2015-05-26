@@ -39,7 +39,10 @@
                 templateUrl: 'gistter/timeline/timeline.html',
                 controller: 'timelineCtrl',
                 resolve: {
-                    timelineData: function (timelineFactory) {
+                    timelineData: function (userFactory, timelineFactory) {
+                        if(userFactory.isAuth() === false) {
+                            return false;
+                        }
                         return timelineFactory.getTL();
                     }
                 }

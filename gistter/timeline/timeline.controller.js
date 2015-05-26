@@ -9,15 +9,13 @@
 
     /* @ngInject */
     function timeline($scope, $state, Tweet, User, FM, timelineData) {
-        if(!User.isAuth()) {
+        if(timelineData == false) {
             FM.setMessage('Debes loguearte para ver la página', 'warning');
             $state.go('login'); // Enviar a una página de inicio con login/signup
         }
 
-        console.log(timelineData);
-
         $scope.tweet = {};
-        $scope.tweets = [];
+        $scope.tweets = timelineData.data.tweets;
         $scope.postTweet = function() {
             var tweet = {
                 body: $scope.tweet.body,
