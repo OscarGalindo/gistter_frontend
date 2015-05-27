@@ -1,6 +1,11 @@
 html, body {
     height: 100%;
 }
+
+* {
+    outline: none !important;
+}
+
 footer {
     width: 100%;
     bottom: 0;

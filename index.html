@@ -25,7 +25,9 @@
                     <li ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
                 </ul>
                 <div class="nav navbar-nav navbar-right userLogin" ng-if="header.isauth()">
-                    Wellcome {{header.username()}}!
+                    <button class="btn btn-link" ui-sref="profile({username: header.username()})">
+                        <span class="text-info">{{header.username()}}</span>
+                    </button>
                     <button class="btn btn-link" ng-click="logout()">
                         <span class="text-danger">Logout</span>
                     </button>
@@ -44,7 +46,7 @@
                     <strong>{{m.text}}</strong>
                 </div>
             </div>
-            <div class="col-lg-8 col-lg-offset-2">
+            <div class="col-sm-12">
                 <section ui-view></section>
             </div>
         </div>
