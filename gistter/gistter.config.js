@@ -35,7 +35,7 @@
                 controller: 'userCtrl'
             })
             .state('tweet', {
-                url: '/tweet/:id',
+                url: '/:username/:id',
                 templateUrl: 'gistter/tweet/tweet_layout.html',
                 controller: 'tweetCtrl',
                 resolve: {

@@ -28,7 +28,7 @@
         </div>
     </div>
 </div>
-<tweet ng-repeat="tweet in tweets" tweet-data="tweet"></tweet>
+<tweet ng-repeat="tweet in tweets | orderBy:'created_at':true" tweet-data="tweet"></tweet>
 <div ng-if="tweets.length == 0">
     <div class="jumbotron">
         <h1>Empty timeline</h1>
