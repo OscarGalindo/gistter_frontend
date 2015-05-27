@@ -47,7 +47,7 @@
             .state('tag', {
                 url: '/tag/:tag',
                 templateUrl: 'gistter/tag/tag_layout.html',
-                controller: 'tweetCtrl',
+                controller: 'tagCtrl',
                 resolve: {
                     tweet: function ($stateParams, tagFactory) {
                         return tagFactory.get_by_tag($stateParams.tag);

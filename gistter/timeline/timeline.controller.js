@@ -12,6 +12,7 @@
         if(timelineData == false) {
             FM.setMessage('Debes loguearte para ver la página', 'warning');
             $state.go('login'); // Enviar a una página de inicio con login/signup
+            return;
         }
 
         $scope.tweet = {};
