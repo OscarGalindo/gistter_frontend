@@ -7,7 +7,7 @@
         </small>
     </div>
     <div class="panel-body">
-        <p>{{tweetData.body}}</p>
+        <p ng-bind-html="tweetData.body"></p>
 
         <div class="panel panel-default" style="margin-top: 20px;" ng-if="tweetData.code_html">
             <div class="panel-heading">

@@ -44,6 +44,16 @@
                     }
                 }
             })
+            .state('tag', {
+                url: '/tag/:tag',
+                templateUrl: 'gistter/tag/tag_layout.html',
+                controller: 'tweetCtrl',
+                resolve: {
+                    tweet: function ($stateParams, tagFactory) {
+                        return tagFactory.get_by_tag($stateParams.tag);
+                    }
+                }
+            })
             .state('timeline', {
                 url: '/',
                 templateUrl: 'gistter/timeline/timeline.html',
