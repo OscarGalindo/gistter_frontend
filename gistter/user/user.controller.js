@@ -10,6 +10,7 @@
     /* @ngInject */
     function userCtrl($scope, $state, User, Flashmessage) {
         $scope.user = {};
+        $scope.is_auth = User.isAuth();
 
         $scope.login = function () {
             var data = {
