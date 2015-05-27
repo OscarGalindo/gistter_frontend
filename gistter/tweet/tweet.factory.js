@@ -11,7 +11,8 @@
     function tweet(API, $http) {
         var service = {
             tweet: tweet,
-            create: create
+            create: create,
+            get_by_id: get_by_id
         };
 
         return service;
@@ -23,6 +24,10 @@
 
         function create(data) {
             return $http.post(API.url + 'tweet/', data);
+        }
+
+        function get_by_id(id) {
+            return $http.get(API.url + 'tweet/' + id);
         }
     }
 })();

@@ -34,6 +34,16 @@
                 url: '/logout',
                 controller: 'userCtrl'
             })
+            .state('tweet', {
+                url: '/tweet/:id',
+                templateUrl: 'gistter/tweet/tweet_layout.html',
+                controller: 'tweetCtrl',
+                resolve: {
+                    tweet: function ($stateParams, tweetFactory) {
+                        return tweetFactory.get_by_id($stateParams.id);
+                    }
+                }
+            })
             .state('timeline', {
                 url: '/',
                 templateUrl: 'gistter/timeline/timeline.html',
@@ -46,6 +56,9 @@
                         return timelineFactory.getTL();
                     }
                 }
+            })
+            .state('404', {
+                templateUrl: 'gistter/common/404.html'
             })
             .state('profile', {
                 url: '/:username',
