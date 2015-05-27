@@ -3,7 +3,7 @@
         <img src="http://i.imgur.com/SgjlF2v.png" class="profile"/>
         <span class="nickname"><strong>{{tweetData.user.fullname}}</strong></span>
         <small class="text-muted-header"><a ui-sref="profile({username: tweetData.user.username})">
-            @{{tweetData.user.username}}</a> - <a ui-sref="tweet({id: tweetData._id})">{{tweetData.created_at}}</a>
+            @{{tweetData.user.username}}</a> - <a ui-sref="tweet({id: tweetData._id})" am-time-ago="tweetData.created_at"></a>
         </small>
     </div>
     <div class="panel-body">

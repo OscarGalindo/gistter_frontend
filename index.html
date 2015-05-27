@@ -3,7 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Gistter</title>
-    <base href="/" />
+    <base href="/"/>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="css/theme/superhero.min.css"/>
@@ -13,54 +13,54 @@
     <link rel="stylesheet" href="css/user.profile.css"/>
 </head>
 <body ng-app="gistter" ng-controller="headerCtrl as header">
-    <!-- Barra de navegación -->
-    <header class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" ui-sref="timeline">Gistter</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav navbar-right" ng-if="!header.isauth()">
-                    <li ui-sref-active="active"><a ui-sref="login">Login</a></li>
-                    <li ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
-                </ul>
-                <div class="nav navbar-nav navbar-right userLogin" ng-if="header.isauth()">
-                    <button class="btn btn-link" ui-sref="profile({username: header.username()})">
-                        <span class="text-success">{{header.username()}}</span>
-                    </button>
-                    <button class="btn btn-link" ng-click="logout()">
-                        <span>Logout</span>
-                    </button>
-                </div>
+<!-- Barra de navegación -->
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="timeline">Gistter</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right" ng-if="!header.isauth()">
+                <li ui-sref-active="active"><a ui-sref="login">Login</a></li>
+                <li ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
+            </ul>
+            <div class="nav navbar-nav navbar-right userLogin" ng-if="header.isauth()">
+                <button class="btn btn-link" ui-sref="profile({username: header.username()})">
+                    <span class="text-success">{{header.username()}}</span>
+                </button>
+                <button class="btn btn-link" ng-click="logout()">
+                    <span>Logout</span>
+                </button>
             </div>
         </div>
-    </header>
-    <!-- ===================== -->
+    </div>
+</header>
+<!-- ===================== -->
 
-    <!-- Container -->
-    <section class="container">
-        <!-- Contenido de la página -->
-        <div class="row gistter_content">
-            <div class="col-sm-8" ng-controller="flashmessageCtrl" >
-                <div ng-repeat="m in fmsg()" class="alert alert-dismissible" ng-class="'alert-' + m.type">
-                    <strong>{{m.text}}</strong>
-                </div>
-            </div>
-            <div class="col-sm-8 col-sm-offset-2">
-                <section ui-view></section>
+<!-- Container -->
+<section class="container">
+    <!-- Contenido de la página -->
+    <div class="row gistter_content">
+        <div class="col-sm-8 col-sm-offset-2" ng-controller="flashmessageCtrl">
+            <div ng-repeat="m in fmsg()" class="alert alert-dismissible" ng-class="'alert-' + m.type">
+                <strong>{{m.text}}</strong>
             </div>
         </div>
-    </section>
+        <div class="col-sm-8 col-sm-offset-2">
+            <section ui-view></section>
+        </div>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer>
-        Made by
-        <a href="https://github.com/kaseOga" rel="nofollow">Oscar Galindo Villanueva</a>
-        and
-        <a href="https://github.com/nvohra" rel="nofollow">Naman Vohra</a>
-        .
-    </footer>
-    <!-- ========== -->
+<!-- Footer -->
+<footer>
+    Made by
+    <a href="https://github.com/kaseOga" rel="nofollow">Oscar Galindo Villanueva</a>
+    and
+    <a href="https://github.com/nvohra" rel="nofollow">Naman Vohra</a>
+    .
+</footer>
+<!-- ========== -->
 
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
@@ -68,6 +68,8 @@
 <script src="bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
 <script src="bower_components/ngstorage/ngStorage.min.js"></script>
 <script src="bower_components/angular-fontawesome/dist/angular-fontawesome.min.js"></script>
+<script src="bower_components/moment/min/moment.min.js"></script>
+<script src="bower_components/angular-moment/angular-moment.min.js"></script>
 <script src="build/gistter.js"></script>
 </body>
 </html>
