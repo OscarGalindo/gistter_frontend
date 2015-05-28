@@ -41,12 +41,12 @@
 <section class="container">
     <!-- Contenido de la página -->
     <div class="row gistter_content">
-        <div class="col-sm-8 col-sm-offset-2" ng-controller="flashmessageCtrl">
+        <div class="col-xs-12 col-lg-10 col-lg-offset-1" ng-controller="flashmessageCtrl">
             <div ng-repeat="m in fmsg()" class="alert alert-dismissible" ng-class="'alert-' + m.type">
                 <strong>{{m.text}}</strong>
             </div>
         </div>
-        <div class="col-sm-8 col-sm-offset-2">
+        <div class="col-xs-12 col-lg-10 col-lg-offset-1">
             <section ui-view></section>
         </div>
     </div>

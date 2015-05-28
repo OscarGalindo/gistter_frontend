@@ -18,13 +18,26 @@ footer {
     margin-top: 60px;
 }
 
-.text-muted-header {
-    color: #98A2AD;
-}
-
 .userLogin {
     font-size: 13px;
 }
+
+.tweet__nick {
+    font-weight: 700;
+    color: #688dc8;
+}
+.tweet__nick:hover {
+    color: #7fabf1;
+}
+.tweet__time-since {
+    font-size: 10px;
+    color: #98A2AD;
+}
+.tweet__time-since:hover {
+    color: #bfccdc;
+}
+
+
 
 .tweet_resp.ng-enter {
     transition: all linear 500ms;

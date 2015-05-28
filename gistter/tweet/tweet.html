@@ -2,8 +2,8 @@
     <div class="panel-heading">
         <img src="http://i.imgur.com/SgjlF2v.png" class="profile"/>
         <span class="nickname"><strong>{{tweetData.user.fullname}}</strong></span>
-        <small class="text-muted-header"><a ui-sref="profile({username: tweetData.user.username})">
-            @{{tweetData.user.username}}</a> - <a ui-sref="tweet({username: tweetData.user.username, id: tweetData._id})" am-time-ago="tweetData.created_at"></a>
+        <small class="text-muted-header"><a class="tweet__nick" ui-sref="profile({username: tweetData.user.username})">
+            @{{tweetData.user.username}}</a> - <a class="tweet__time-since" ui-sref="tweet({username: tweetData.user.username, id: tweetData._id})" am-time-ago="tweetData.created_at"></a>
         </small>
     </div>
     <div class="panel-body">
