@@ -28,7 +28,7 @@
             <fa name="twitter"></fa>
         </div>
     </div>
-    <div class="panel-body" ng-if="toresp">
+    <div class="panel-body tweet_resp" ng-if="toresp">
         <textarea name="to_resp" id="to_resp" style="width: 100%; height: 100px;" placeholder="Reply to @{{tweetData.user.username}}"></textarea>
 
         <button type="submit" class="pull-right btn btn-success clearfix" ng-click="postTweet()">Reply
