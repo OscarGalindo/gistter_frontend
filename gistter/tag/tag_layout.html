@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-xs-12">
+        <h2>Tweets about {{hashtag}}</h2>
+        <!--<div class="panel panel-primary">-->
+            <!--<div class="panel-heading">Tweet something about <strong>{{hashtag}}</strong></div>-->
+            <!--<div class="panel-body">-->
+                <!--<form name="tweet" novalidate class="form-horizontal">-->
+                    <!--&lt;!&ndash; tweet &ndash;&gt;-->
+                    <!--<div class="form-group">-->
+                        <!--<div class="col-sm-12">-->
+                            <!--<textarea class="form-control" rows="2" id="textArea" placeholder="Tweet something about {{hashtag}}"-->
+                                      <!--ng-model="tweet.body" required ></textarea>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash; gist &ndash;&gt;-->
+                    <!--<div class="form-group" ng-if="addgist">-->
+                        <!--<div class="col-sm-12">-->
+                            <!--<textarea class="form-control" rows="5" id="gist" placeholder="Add your code inside"-->
+                                      <!--ng-model="tweet.gist" required></textarea>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<button class="btn btn-info" ng-click="addgist = !addgist" ng-class="addgist ? 'btn-danger' : 'btn-info'">-->
+                        <!--<fa name="github" size="1"></fa> {{addgist? 'Remove' : 'Add'}} gist-->
+                    <!--</button>-->
+                    <!--<button type="submit" class="pull-right btn btn-success" ng-click="postTweet()">Tweetear-->
+                    <!--</button>-->
+                <!--</form>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+<tweet ng-repeat="tweet in tweets | orderBy:'_id':true" tweet-data="tweet"></tweet>
+<div ng-if="tweets.length == 0">
+    <div class="jumbotron">
+        <h1>Empty timeline</h1>
+        <p>Follow someone to see your timeline</p>
+    </div>
+</div>

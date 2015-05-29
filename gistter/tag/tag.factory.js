@@ -18,7 +18,7 @@
         ////////////////
 
         function get_by_tag(tag) {
-            return $http.get(API.url + '/' + tag);
+            return $http.get(API.url + 'tag/' + tag);
         }
     }
 })();
