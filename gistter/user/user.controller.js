@@ -25,18 +25,24 @@
                     $state.go('timeline');
                 })
                 .error(function() {
-                    var message = "Login failed. Try again."
+                    var message = "Login failed. Try again.";
                     Flashmessage.setMessage(message, 'danger');
                     $state.reload();
                 });
         };
 
         $scope.signup = function () {
+            if($scope.user.password != $scope.user.confirmPassword) {
+                Flashmessage.setMessage('Las contraseñas deben ser diferentes', 'danger');
+                $state.reload();
+            }
+
             var data = {
                 "username": $scope.user.username,
                 "email": $scope.user.email,
                 "password": $scope.user.password,
-                "confirmPassword": $scope.user.confirmPassword
+                "name": $scope.user.name,
+                "lastname": $scope.user.lastname
             };
 
             User.signup(data)
