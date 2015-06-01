@@ -22,7 +22,7 @@
         <div class="pull-left">
             <fa name="reply" style="color: rgba(255, 255, 255, 0.50);" ng-click="toresp = !toresp"></fa>
             <fa name="retweet" style="color: rgba(255, 255, 255, 0.50);"></fa>
-            <fa name="ellipsis-h" style="color: rgba(255, 255, 255, 0.50);"></fa>
+            <fa ng-if="tweetData.user.username == user" ng-click="deleteTweet(tweetData)" name="remove" style="color: rgba(255, 255, 255, 0.50);"></fa>
         </div>
         <div class="pull-right">
             <fa name="google"></fa>

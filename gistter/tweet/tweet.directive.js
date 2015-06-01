@@ -16,7 +16,8 @@
             },
             link: function (scope) {
                 scope.treply = {};
-                scope.profile_from_user = (userFactory.getUsername() == scope.tweetData.user.username);
+                scope.user = userFactory.getUsername();
+                scope.profile_from_user = (scope.user == scope.tweetData.user.username);
                 scope.tweetData.body = $filter('linkify')(scope.tweetData.body, scope.tweetData.hashtags);
 
                 scope.replyTweet = function(parent) {
@@ -25,6 +26,14 @@
                             FM.setMessage('Has respondido correctamente a @' + parent.user.username, 'success');
                             $state.reload();
                         });
+                };
+
+                scope.deleteTweet = function(tweet) {
+                    Tweet.remove(tweet._id)
+                        .then(function() {
+                            FM.setMessage('Tweet eliminado correctamente.', 'warning');
+                            $state.go('timeline', {}, {reload: true});
+                        })
                 }
             }
         }

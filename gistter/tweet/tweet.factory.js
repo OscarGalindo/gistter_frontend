@@ -13,12 +13,17 @@
             tweet: tweet,
             create: create,
             get_by_id: get_by_id,
-            reply: reply
+            reply: reply,
+            remove: remove
         };
 
         return service;
 
         ////////////////
+
+        function remove(id) {
+            return $http.delete(API.url + 'tweet/' + id);
+        }
 
         function tweet() {
         }
