@@ -40,8 +40,10 @@
             };
 
             service.create(reply)
-                .success(function(data) {
+                .then(function(data) {
                     q.resolve(data);
+                }, function() {
+                    q.reject('error');
                 });
 
             return q.promise;

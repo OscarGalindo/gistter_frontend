@@ -1,1 +1,5 @@
 <tweet tweet-data="tweet"></tweet>
+<div ng-if="childs.length > 0">
+    <hr/>
+    <tweet tweet-data="child" ng-repeat="child in childs | orderBy:'_id':true"></tweet>
+</div>

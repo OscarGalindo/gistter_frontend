@@ -21,7 +21,7 @@
 
                 scope.replyTweet = function(parent) {
                     Tweet.reply(parent._id, scope.treply.body)
-                        .success(function(data) {
+                        .then(function() {
                             FM.setMessage('Has respondido correctamente a @' + parent.user.username, 'success');
                             $state.reload();
                         });
