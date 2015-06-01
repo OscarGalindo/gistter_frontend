@@ -4,7 +4,7 @@
     angular
         .module('gistter')
         .constant('API', {
-            url: 'http://localhost:5000/'
+            url: 'http://gistter.me/api/'
         })
         .config(config);
 
@@ -39,9 +39,9 @@
                 templateUrl: 'gistter/tag/tag_layout.html',
                 controller: 'tagCtrl',
                 resolve: {
-                    tag: function ($stateParams, tagFactory) {
+                    tag: ['$stateParams', 'tagFactory', function ($stateParams, tagFactory) {
                         return tagFactory.get_by_tag($stateParams.tag);
-                    }
+                    }]
                 }
             })
             .state('search', {
@@ -49,9 +49,9 @@
                 templateUrl: 'gistter/profile/list_users.html',
                 controller: 'searchCtrl',
                 resolve: {
-                    users: function ($stateParams, headerFactory) {
+                    users: ['$stateParams', 'headerFactory', function ($stateParams, headerFactory) {
                         return headerFactory.search($stateParams.text);
-                    }
+                    }]
                 }
             })
             .state('tweet', {
@@ -59,9 +59,9 @@
                 templateUrl: 'gistter/tweet/tweet_layout.html',
                 controller: 'tweetCtrl',
                 resolve: {
-                    tweet: function ($stateParams, tweetFactory) {
+                    tweet: ['$stateParams', 'tweetFactory', function ($stateParams, tweetFactory) {
                         return tweetFactory.get_by_id($stateParams.id);
-                    }
+                    }]
                 }
             })
             .state('timeline', {
@@ -69,12 +69,12 @@
                 templateUrl: 'gistter/timeline/timeline.html',
                 controller: 'timelineCtrl',
                 resolve: {
-                    timelineData: function (userFactory, timelineFactory) {
+                    timelineData: ['userFactory', 'timelineFactory', function (userFactory, timelineFactory) {
                         if(userFactory.isAuth() === false) {
                             return false;
                         }
                         return timelineFactory.getTL();
-                    }
+                    }]
                 }
             })
             .state('404', {
@@ -85,9 +85,9 @@
                 templateUrl: 'gistter/profile/profile.html',
                 controller: 'profileCtrl',
                 resolve: {
-                    userProfile: function ($stateParams, profileFactory) {
+                    userProfile: ['$stateParams', 'profileFactory', function ($stateParams, profileFactory) {
                         return profileFactory.get($stateParams.username);
-                    }
+                    }]
                 }
             })
     }
