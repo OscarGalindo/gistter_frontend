@@ -24,6 +24,7 @@ footer {
 }
 .profile_image {
     width: 40px;
+    margin-right: 10px;
 }
 
 .tweet__nick {
@@ -61,4 +62,11 @@ footer {
 .tweet_resp.ng-leave-active {
     opacity: 0;
     transform: translate3d(100px, 0, 0);
+}
+
+.searchprofile {
+    cursor: pointer;
+}
+.searchprofile:hover {
+    background-color: #3a4d60;
 }
