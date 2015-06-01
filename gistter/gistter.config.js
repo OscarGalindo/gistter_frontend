@@ -44,6 +44,16 @@
                     }
                 }
             })
+            .state('search', {
+                url: '/search/:text',
+                templateUrl: 'gistter/profile/list_users.html',
+                controller: 'searchCtrl',
+                resolve: {
+                    users: function ($stateParams, headerFactory) {
+                        return headerFactory.search($stateParams.text);
+                    }
+                }
+            })
             .state('tweet', {
                 url: '/:username/:id',
                 templateUrl: 'gistter/tweet/tweet_layout.html',
@@ -72,7 +82,7 @@
             })
             .state('profile', {
                 url: '/:username',
-                templateUrl: 'gistter/profile/user.html',
+                templateUrl: 'gistter/profile/profile.html',
                 controller: 'profileCtrl',
                 resolve: {
                     userProfile: function ($stateParams, profileFactory) {
