@@ -3,15 +3,14 @@
   "version": "1.0.0",
   "description": "Gistter Frontend",
   "main": "gistter/gistter.module.js",
-  "dependencies": {
-    "bower": "~1.4.1"
-  },
   "devDependencies": {
     "gulp": "~3.8.11",
+    "bower": "~1.4.1",
     "gulp-concat": "~2.5.2",
     "gulp-util": "~3.0.4",
     "gulp-uglify": "~1.2.0",
-    "gulp-notify": "~2.2.0"
+    "gulp-notify": "~2.2.0",
+    "gulp-sourcemaps": "~1.5.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
