@@ -16,22 +16,37 @@
 <!-- Barra de navegación -->
 <header class="navbar navbar-default navbar-fixed-top">
     <div class="container">
-        <div class="navbar-header">
-            <a class="navbar-brand" ui-sref="timeline">Gistter</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right" ng-if="!header.isauth()">
-                <li ui-sref-active="active"><a ui-sref="login">Login</a></li>
-                <li ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
-            </ul>
-            <div class="nav navbar-nav navbar-right userLogin" ng-if="header.isauth()">
-                <button class="btn btn-link" ui-sref="profile({username: header.username()})">
-                    <span class="text-success">{{header.username()}}</span>
-                </button>
-                <button class="btn btn-link" ng-click="logout()">
-                    <span>Logout</span>
-                </button>
+        <div class="row">
+            <div class="navbar-header col-xs-2">
+                <a class="navbar-brand" ui-sref="timeline">Gistter</a>
             </div>
+
+            <div class="col-xs-6">
+                <form class="col-xs-12 navbar-form " role="search">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            <span class="input-group-addon"><fa name="search"></fa></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-xs-4">
+                <ul class="nav navbar-nav navbar-right" ng-if="!header.isauth()">
+                    <li ui-sref-active="active"><a ui-sref="login">Login</a></li>
+                    <li ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
+                </ul>
+                <div class="nav navbar-nav navbar-right userLogin" ng-if="header.isauth()">
+                    <button class="btn btn-link" ui-sref="profile({username: header.username()})">
+                        <span class="text-success">{{header.username()}}</span>
+                    </button>
+                    <button class="btn btn-link" ng-click="logout()">
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+
         </div>
     </div>
 </header>

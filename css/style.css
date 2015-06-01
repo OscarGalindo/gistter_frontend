@@ -37,6 +37,9 @@ footer {
     color: #bfccdc;
 }
 
+.input-group-addon {
+    padding: 5px 5px;
+}
 
 
 .tweet_resp.ng-enter {
