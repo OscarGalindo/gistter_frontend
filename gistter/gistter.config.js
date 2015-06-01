@@ -34,6 +34,16 @@
                 url: '/logout',
                 controller: 'userCtrl'
             })
+            .state('tag', {
+                url: '/tag/:tag',
+                templateUrl: 'gistter/tag/tag_layout.html',
+                controller: 'tagCtrl',
+                resolve: {
+                    tag: function ($stateParams, tagFactory) {
+                        return tagFactory.get_by_tag($stateParams.tag);
+                    }
+                }
+            })
             .state('tweet', {
                 url: '/:username/:id',
                 templateUrl: 'gistter/tweet/tweet_layout.html',
@@ -41,16 +51,6 @@
                 resolve: {
                     tweet: function ($stateParams, tweetFactory) {
                         return tweetFactory.get_by_id($stateParams.id);
-                    }
-                }
-            })
-            .state('tag', {
-                url: '/tag/:tag',
-                templateUrl: 'gistter/tag/tag_layout.html',
-                controller: 'tagCtrl',
-                resolve: {
-                    tweet: function ($stateParams, tagFactory) {
-                        return tagFactory.get_by_tag($stateParams.tag);
                     }
                 }
             })

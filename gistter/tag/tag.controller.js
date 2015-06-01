@@ -3,12 +3,13 @@
 
     angular
         .module('gistter')
-        .controller('tag.controller', tagcontroller);
+        .controller('tagCtrl', tagCtrl);
 
-    tagcontroller.$inject = ['tagFactory', '$scope'];
+    tagCtrl.$inject = ['tag', '$scope'];
 
-    function tagcontroller(tagFactory, $scope)
+    function tagCtrl(tag, $scope)
     {
-        $scope.tweets = tagFactory.data.tweets;
+        $scope.tweets = tag.data.tweets;
+        $scope.hashtag = tag.data.hashtag;
     }
 })();
