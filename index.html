@@ -38,6 +38,7 @@
                     <li ui-sref-active="active"><a ui-sref="signup">Sign up</a></li>
                 </ul>
                 <div class="nav navbar-nav navbar-right userLogin" ng-if="header.isauth()">
+                    <a ui-sref="profile({username: header.username()})" class="pull-left"><img ng-src="{{header.profile_image()}}" alt="Imagen Perfil" class="profile_image"></a>
                     <button class="btn btn-link" ui-sref="profile({username: header.username()})">
                         <span class="text-success">{{header.username()}}</span>
                     </button>

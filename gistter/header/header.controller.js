@@ -13,6 +13,7 @@
 
         vm.isauth = User.isAuth;
         vm.username = User.getUsername;
+        vm.profile_image = User.getProfileImage;
         vm.searcher = {};
 
         $scope.logout = function () {

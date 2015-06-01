@@ -14,6 +14,7 @@
         var user = {
             token: $local.jwt || $session.jwt,
             getUsername: getUsername,
+            getProfileImage: getProfileImage,
             setToken: setToken,
             getToken: getToken,
             isAuth: isAuth,
@@ -37,6 +38,12 @@
         function getUsername() {
             if (user.token != null || user.token != undefined) {
                 return jwtHelper.decodeToken(user.token).username
+            }
+        }
+
+        function getProfileImage() {
+            if (user.token != null || user.token != undefined) {
+                return jwtHelper.decodeToken(user.token).image_profile
             }
         }
 

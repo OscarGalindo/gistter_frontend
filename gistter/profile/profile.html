@@ -4,7 +4,7 @@
             <div class="profile-sidebar">
                 <!-- SIDEBAR USERPIC -->
                 <div class="profile-userpic">
-                    <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg"
+                    <img ng-src="{{profile.image_profile}}"
                          class="img-responsive" alt="">
                 </div>
                 <!-- END SIDEBAR USERPIC -->
@@ -28,8 +28,15 @@
         </div></div>
     <div class="row">
         <div class="col-sm-12">
-            <div class="profile-content">
+            <hr/>
+            <div class="profile-content" ng-show="tweets.length > 0">
                 <tweet ng-repeat="tweet in tweets | orderBy:'_id':true" tweet-data="tweet"></tweet>
+            </div>
+            <div ng-hide="tweets.length > 0">
+                <div class="jumbotron">
+                    <h1>Empty timeline</h1>
+                    <p>This users doesn't have tweets.</p>
+                </div>
             </div>
         </div></div>
 </div>

@@ -19,7 +19,11 @@ footer {
 }
 
 .userLogin {
+    width: 100%;
     font-size: 13px;
+}
+.profile_image {
+    width: 40px;
 }
 
 .tweet__nick {

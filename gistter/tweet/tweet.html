@@ -1,6 +1,6 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <img src="http://i.imgur.com/SgjlF2v.png" class="profile"/>
+        <img ng-src="{{tweetData.user.image_profile}}" class="profile"/>
         <span class="nickname"><strong>{{tweetData.user.fullname}}</strong></span>
         <small class="text-muted-header"><a class="tweet__nick" ui-sref="profile({username: tweetData.user.username})">
             @{{tweetData.user.username}}</a> - <a class="tweet__time-since"
