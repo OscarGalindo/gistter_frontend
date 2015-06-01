@@ -1,9 +1,10 @@
 {
   "name": "Gistter",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/kaseOga/gistter_frontend",
   "authors": [
-    "Naman <namanv91@gmail.com>"
+    "Naman <namanv91@gmail.com>",
+    "Oscar <galindero@gmail.com"
   ],
   "description": "Gistter",
   "main": "index.html",
