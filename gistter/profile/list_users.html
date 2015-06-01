@@ -1,3 +1,19 @@
-<div>
-    {{users}}
+<div ng-show="users.length > 0">
+    <div class="row">
+        <div class="col-xs-10">
+            <div class="panel panel-default" ng-repeat="user in users">
+                <div class="panel-body">
+                    <img ng-src="{{user.image_profile}}" class="profile_image">
+                    <a class="tweet__nick" ui-sref="profile({username: user.username})">{{user.fullname}}
+                        @{{user.username}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div ng-hide="users.length > 0">
+    <div class="jumbotron">
+        <h1>User not found</h1>
+        <p>Try again with a different username.</p>
+    </div>
 </div>

@@ -9,6 +9,6 @@
 
     function searcher(users, $scope)
     {
-        $scope.users = users.data;
+        $scope.users = users.data.users;
     }
 })();
