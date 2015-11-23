@@ -1,4 +1,4 @@
-# Gistter Frontend  [![Build Status](https://travis-ci.org/kaseOga/gistter_frontend.svg)](https://travis-ci.org/kaseOga/gistter_frontend)
+# Gistter Frontend 
 ### by Naman y Oscar
 
 * Bower
